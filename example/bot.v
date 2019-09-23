@@ -5,7 +5,7 @@ fn main() {
         '!help': 'This is help'
     }
 
-    mut twitchbot := twitchbot.TwitchBot{
+    mut twitchbot := vtwitchbot.TwitchBot{
         oauth: 'oauth:<token>'
         nick: '<botusername>'
         channel: ['<channelname>']
