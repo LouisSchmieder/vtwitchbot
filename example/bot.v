@@ -1,4 +1,4 @@
-import twitchbot
+import vtwitchbot
 
 fn main() {
     commandmap := {
