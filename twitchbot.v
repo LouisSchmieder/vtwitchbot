@@ -5,7 +5,6 @@ import net
 struct TwitchBot {
     oauth string
     nick string
-    password string
     channel []string
     commandmap map[string]string
 mut:
