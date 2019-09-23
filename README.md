@@ -1,5 +1,5 @@
 # VTwitchBot
-VTwitchBot is a Twitch chat bot written on [V](https://github.com/vlang/v)
+VTwitchBot is a Twitch chat bot written in [V](https://github.com/vlang/v)
 
 ## Features
 The bot is able to:
@@ -16,4 +16,23 @@ The bot is able to:
 ## Installation
 ```
 v install prooxeydev.vtwitchbot
+```
+
+## Example
+```
+import vtwitchbot
+
+fn main() {
+    commandmap := {
+        '!help': 'This is help'
+    }
+
+    mut twitchbot := vtwitchbot.TwitchBot{
+        oauth: 'oauth:<token>'
+        nick: '<botusername>'
+        channel: ['<channelname>']
+        commandmap: commandmap
+    }
+    twitchbot.connect()
+}
 ```
