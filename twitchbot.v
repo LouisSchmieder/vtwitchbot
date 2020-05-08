@@ -40,7 +40,6 @@ fn (bot mut TwitchBot) setup() {
 
 fn (bot mut TwitchBot) listen() {
     START_LISTEN:
-    bot.socket.listen()
     bot.handle(bot.socket.read_line())
     if bot.running {
         goto START_LISTEN
@@ -77,7 +76,7 @@ fn (bot mut TwitchBot) sendircmessage(prefix string, message string) {
     $if debug {
         println(prefix + ' ' + message + '\n\r')
     }
-    bot.socket.write(prefix + ' ' + message + '\n\r')
+    bot.socket.write(prefix + ' ' + message + '\n\r') or { panic(err) }
 }
 
 pub fn (bot mut TwitchBot) sendmessage(message string, channel string) {
@@ -86,5 +85,5 @@ pub fn (bot mut TwitchBot) sendmessage(message string, channel string) {
 
 pub fn (bot mut TwitchBot) close() {
     bot.running = false
-    bot.socket.close()
+    bot.socket.close() or { panic(err) }
 }
