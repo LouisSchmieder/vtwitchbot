@@ -1,5 +1,5 @@
 # VTwitchBot
-VTwitchBot is a Twitch chat bot written in [V](https://github.com/vlang/v)
+VTwitchBot is a Twitch chat bot written in the language [V](https://github.com/vlang/v)
 
 ## Features
 The bot is able to:
